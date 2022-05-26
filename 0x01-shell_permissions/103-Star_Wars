@@ -1,0 +1,3 @@
+#!/bin/bash
+apt install mpv -y
+mpv StarWars IV episode

@@ -1,0 +1,4 @@
+#!/bin/bash
+ln -s hello _hello
+sudo chown vincent _hello
+chgrp staff _hello
