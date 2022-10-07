@@ -1,1 +1,1 @@
-solutions to some of the CMD CHALLENGEs.
+solutions to some of the CMD CHALLENGEs online.
