@@ -1,3 +1,4 @@
+![Meme](https://twitter.com/devopsreact/status/834887829486399488)
 Issue Summary
 
 From 6:26 PM to 7:58 PM PT, requests to most Google APIs resulted in 500 error response messages. Google applications that rely on these APIs also returned errors or had reduced functionality. At its peak, the issue affected 100% of traffic to this API infrastructure. Users could continue to access certain APIs that run on separate infrastructures. The root cause of this outage was an invalid configuration change that exposed a bug in a widely used internal library.
