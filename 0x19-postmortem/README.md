@@ -3,6 +3,7 @@ Issue Summary
 From 6:26 PM to 7:58 PM PT, requests to most Google APIs resulted in 500 error response messages. Google applications that rely on these APIs also returned errors or had reduced functionality. At its peak, the issue affected 100% of traffic to this API infrastructure. Users could continue to access certain APIs that run on separate infrastructures. The root cause of this outage was an invalid configuration change that exposed a bug in a widely used internal library.
 
 Timeline (all times Pacific Time)
+
 6:19 PM: Configuration push begins
 6:26 PM: Outage begins
 6:26 PM: Pagers alerted teams
@@ -10,6 +11,7 @@ Timeline (all times Pacific Time)
 7:15 PM: Successful configuration change rollback
 7:19 PM: Server restarts begin
 7:58 PM: 100% of traffic back online
+
 Root Cause
 
 At 6:19 PM PT, a configuration change was inadvertently released to our production environment without first being released to the testing enviroment. The change specified an invalid address for the authentication servers in production. This exposed a bug in the authentication libraries which caused them to block permanently while attempting to resolve the invalid address to physical services. In addition, the internal monitoring systems permanently blocked on this call to the authentication library. The combination of the bug and configuration error quickly caused all of the serving threads to be consumed. Traffic was permanently queued waiting for a serving thread to become available. The servers began repeatedly hanging and restarting as they attempted to recover and at 6:26 PM PT, the service outage began.
